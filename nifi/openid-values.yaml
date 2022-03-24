@@ -1,0 +1,12 @@
+nifi:
+  properties:
+    secured: true
+  authentication:
+    openid:
+      enabled: true
+      discoveryUrl: ""
+      clientId: ""
+      clientSecret: ""
+      additionalScopes: "profile"
+      preferredJwsAlgorithm: ""
+      claimIdentityingUser: ""

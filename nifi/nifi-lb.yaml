@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: nifi
+    meta.helm.sh/release-namespace: default
+  labels:
+    app: nifi
+    app.kubernetes.io/managed-by: Helm
+    chart: nifi-0.1.0
+    heritage: Helm
+    release: nifi
+  name: nifi-lb
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: nifi
+    release: nifi
+  type: LoadBalancer
+status:
+  loadBalancer: {}
