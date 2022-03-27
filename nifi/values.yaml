@@ -31,13 +31,13 @@ headless:
 
 # ui service
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port:
     http: 80
     https: 443
   annotations: {}
-  sessionAffinity: "ClientIP"
-  sessionAffinityTimeoutInSeconds: 60
+  # sessionAffinity: "ClientIP"
+  # sessionAffinityTimeoutInSeconds: 60
 
 ingress:
   enabled: false
